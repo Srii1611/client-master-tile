@@ -1,101 +1,211 @@
-import Image from "next/image";
+import type { Metadata } from "next";
+import Link from "next/link";
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: "Professional Tile Installation in Framingham, MA",
+  description:
+    "Master Tile Installation, Inc. offers expert floor, wall, and bathroom tile installation for homes and businesses in Framingham, MA and the MetroWest area.",
+  alternates: { canonical: "/" },
+};
+
+const stats = [
+  { value: "10+", label: "Years in Business" },
+  { value: "500+", label: "Projects Completed" },
+  { value: "5★", label: "Average Rating" },
+  { value: "100%", label: "Licensed & Insured" },
+];
+
+const services = [
+  {
+    title: "Bathroom Renovations",
+    desc: "Full bathroom tile renovations — floors, walls, custom showers, and wet areas.",
+    image: "/images/bathroom1.jpg",
+  },
+  {
+    title: "Kitchen Remodeling",
+    desc: "Stylish backsplash designs and kitchen floor tile that complement your space.",
+    image: "/images/kitchen1.jpg",
+  },
+  {
+    title: "Tile Flooring",
+    desc: "Porcelain, ceramic, and natural stone floors installed with precision.",
+    image: "/images/flooring1.jpg",
+  },
+];
+
+const reviews = [
+  {
+    name: "Anthony Giammarco",
+    text: "Lucas and Master Tile are the ultimate professionals. Excellent quality of work, timeliness and very fairly priced. Could not recommend enough!",
+    stars: 5,
+  },
+  {
+    name: "Lindsey White",
+    text: "I can't say enough about Master Tile Installation. We decided at the last minute to not tile our new shower ourselves, so I called these guys up and they came out within a few days to create an estimate and asked questions that we had never thought of. They worked with us to make sure we found the exact color stone that we wanted and didn't settle and did an amazing job overall. So clean walking through our house, picked up after themselves with all the work they did, and everything looks amazing!",
+    stars: 5,
+  },
+  {
+    name: "Todd Miller",
+    text: "Luke and his team were really great to work with. I can't say enough great things about their work. I'd use them again for sure!",
+    stars: 5,
+  },
+];
+
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <>
+      {/* Hero with background video */}
+      <section className="relative text-white py-24 px-4 text-center overflow-hidden bg-slate-900">
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          src="/videos/hero.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-slate-900/65" />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <div className="relative z-10 max-w-3xl mx-auto">
+          <p className="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-3">
+            Framingham, MA &amp; MetroWest
+          </p>
+          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-5">
+            Expert Tile Installation<br className="hidden md:block" /> You Can Trust
+          </h1>
+          <p className="text-slate-300 text-lg mb-8 max-w-xl mx-auto">
+            Master Tile Installation, Inc. brings craftsmanship and care to every project — residential or commercial.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Link
+              href="/contact"
+              className="bg-blue-700 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-md transition-colors"
+            >
+              Get a Free Quote
+            </Link>
+            <Link
+              href="/gallery"
+              className="border border-slate-400 hover:border-blue-400 hover:text-blue-400 text-slate-200 font-semibold px-6 py-3 rounded-md transition-colors"
+            >
+              View Our Work
+            </Link>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      </section>
+
+      {/* Stats bar */}
+      <section className="bg-[#1e3a5f] text-white">
+        <div className="max-w-6xl mx-auto px-4 py-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+          {stats.map(({ value, label }) => (
+            <div key={label}>
+              <p className="text-3xl font-extrabold">{value}</p>
+              <p className="text-sm font-medium">{label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Services overview with photo cards */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-slate-800 text-center mb-2">Our Services</h2>
+          <p className="text-slate-500 text-center mb-10">
+            From single-room updates to full commercial installs, we do it all.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {services.map(({ title, desc, image }) => (
+              <div
+                key={title}
+                className="relative rounded-lg overflow-hidden h-72 group"
+                style={{ backgroundImage: `url(${image})`, backgroundSize: "cover", backgroundPosition: "center" }}
+              >
+                <div className="absolute inset-0 bg-slate-900/55 group-hover:bg-slate-900/70 transition-colors" />
+                <div className="absolute inset-0 flex flex-col justify-end p-5 text-white">
+                  <h3 className="text-lg font-bold mb-1">{title}</h3>
+                  <p className="text-slate-300 text-sm leading-snug">{desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link
+              href="/services"
+              className="text-blue-700 hover:text-blue-700 font-semibold underline underline-offset-2"
+            >
+              See all services →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Why choose us */}
+      <section className="py-16 px-4 bg-gray-100">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-slate-800 mb-4">Why Choose Master Tile?</h2>
+          <p className="text-slate-500 mb-10">
+            We&apos;re a family-owned business serving Framingham and surrounding communities with integrity and skill.
+          </p>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left text-slate-700">
+            {[
+              "Licensed, bonded &amp; fully insured",
+              "Free in-home estimates",
+              "Premium materials at competitive prices",
+              "On-time, on-budget completion",
+              "Residential &amp; commercial expertise",
+              "5-star rated on Google &amp; Houzz",
+            ].map((item) => (
+              <li key={item} className="flex items-start gap-2">
+                <span className="text-blue-700 mt-0.5">✓</span>
+                <span dangerouslySetInnerHTML={{ __html: item }} />
+              </li>
+            ))}
+          </ul>
+          <div className="mt-10">
+            <Link
+              href="/about"
+              className="inline-block bg-slate-800 hover:bg-slate-700 text-white font-semibold px-6 py-3 rounded-md transition-colors"
+            >
+              Learn About Us
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Reviews */}
+      <section className="py-16 px-4 bg-slate-900 text-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-2">What Our Customers Say</h2>
+          <p className="text-slate-400 text-center mb-10">Real reviews from real homeowners in the MetroWest area.</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {reviews.map(({ name, text, stars }) => (
+              <div key={name} className="border border-slate-700 rounded-lg p-6 flex flex-col gap-3 bg-slate-800">
+                <div className="flex gap-0.5">
+                  {Array.from({ length: stars }).map((_, i) => (
+                    <span key={i} className="text-blue-400 text-lg">★</span>
+                  ))}
+                </div>
+                <p className="text-slate-300 text-sm leading-relaxed flex-grow">&ldquo;{text}&rdquo;</p>
+                <p className="text-white font-semibold text-sm">— {name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA banner */}
+      <section className="bg-blue-700 text-white py-14 px-4 text-center">
+        <h2 className="text-2xl md:text-3xl font-bold mb-3">Ready to Start Your Project?</h2>
+        <p className="text-blue-100 mb-6">
+          Contact us today for a free, no-obligation estimate.
+        </p>
+        <Link
+          href="/contact"
+          className="bg-white hover:bg-slate-100 text-blue-700 font-bold px-8 py-3 rounded-md transition-colors"
         >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          Contact Us Now
+        </Link>
+      </section>
+    </>
   );
 }

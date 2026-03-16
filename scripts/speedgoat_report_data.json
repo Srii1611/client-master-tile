@@ -1,0 +1,122 @@
+{
+  "url": "https://www.speedgoat.com/",
+  "date": "March 15, 2026",
+  "brand_name": "Speedgoat",
+  "overall_score": 59,
+  "executive_summary": "Speedgoat scores 59/100 — a company whose product quality and customer proof (CERN, GE Aerospace, Mobileye, MIT) far outpace its marketing execution. The single most urgent gap is conversion infrastructure: repeated 'Learn more' CTAs, a 250-field contact form with no response SLA, and zero pricing signals are leaving qualified engineers on the table every day. The top three actions — CTA rewrites, contact form redesign, and schema markup — require minimal budget and could add an estimated $45,000–$120,000/month in pipeline within 90 days.",
+  "categories": {
+    "Content & Messaging": {
+      "score": 71,
+      "weight": "25%"
+    },
+    "Conversion Optimization": {
+      "score": 34,
+      "weight": "20%"
+    },
+    "SEO & Discoverability": {
+      "score": 54,
+      "weight": "20%"
+    },
+    "Competitive Positioning": {
+      "score": 61,
+      "weight": "15%"
+    },
+    "Brand & Trust": {
+      "score": 74,
+      "weight": "10%"
+    },
+    "Growth & Strategy": {
+      "score": 68,
+      "weight": "10%"
+    }
+  },
+  "findings": [
+    {
+      "severity": "Critical",
+      "finding": "Conversion score 34/100 — 'Learn more' is the dominant CTA across the entire homepage. No specificity, no urgency, no stage-differentiation. For a $10k–$100k+ hardware purchase, this is the lowest-converting CTA possible."
+    },
+    {
+      "severity": "Critical",
+      "finding": "Contact form leads with a 250-option country dropdown (first field), offers three ambiguous paths (Quote/Config/Support) with no routing guidance, and states zero response time SLA. The highest-intent page on the site has no trust signals adjacent to the form."
+    },
+    {
+      "severity": "High",
+      "finding": "Zero schema markup across the entire site. Product, Event, Article, HowTo, BreadcrumbList, and Organization schema are all absent — the site is ineligible for any Google rich results despite having 70+ case studies, a full events calendar, and a deep Knowledge Center."
+    },
+    {
+      "severity": "High",
+      "finding": "/about page returns a confirmed 404. Internal and external links pointing to this URL are discarding PageRank into a dead end. Immediate 301 redirect to /company is required."
+    },
+    {
+      "severity": "High",
+      "finding": "No pricing signals anywhere on the site — no pricing page, no 'starting at' anchor, no tier names. This forces every budget-curious visitor (including academic buyers and startup engineers) into a sales conversation they may not be ready for."
+    },
+    {
+      "severity": "High",
+      "finding": "No hreflang implementation despite offices in Switzerland, USA, and Germany. Google may be serving incorrect regional/language content across all three markets. No German-language content exists for the DE/CH markets."
+    },
+    {
+      "severity": "Medium",
+      "finding": "The best differentiating sentence on the site — 'Exclusively designed for Simulink Real-Time' — appears on the contact page, not the homepage hero. Meanwhile, the homepage leads with 'Real-Time Simulation and Testing,' which any competitor could claim."
+    },
+    {
+      "severity": "Medium",
+      "finding": "70+ customer success stories (including CERN, GE Aerospace, Mobileye, AMZ Racing) are siloed in a dedicated section. No customer logos, testimonials, or quantified outcomes appear on the homepage or product pages where they would have 3–5x the conversion impact."
+    },
+    {
+      "severity": "Medium",
+      "finding": "Zero competitive comparison content. No 'Speedgoat vs. dSPACE' page, no alternatives content, no comparison tables. Engineers searching 'dSPACE alternative Simulink' find no Speedgoat-authored answer — this is high-intent traffic being lost to third-party forums."
+    },
+    {
+      "severity": "Low",
+      "finding": "No named founders or executives visible on the site. For an 18-year-old company founded by ex-MathWorks engineers, leadership anonymity is a material trust deficit with enterprise procurement teams and research institutions."
+    }
+  ],
+  "quick_wins": [
+    "Replace every 'Learn more' CTA with outcome-specific copy: product pages → 'See Technical Specs', success stories → 'Read the Case Study', services → 'Talk to an Application Engineer'.",
+    "Add 'We respond within 1 business day' immediately below the contact form submit button — the single highest-ROI friction reducer available, costs nothing to implement.",
+    "301-redirect /about → /company immediately. Check Google Search Console for inbound links to /about before redirecting to preserve any external PageRank.",
+    "Move 'Exclusively designed for Simulink Real-Time' from the contact page to the homepage hero section — the strongest differentiating sentence on the site is in the wrong place.",
+    "Add a horizontal trust bar (ISO badge + MathWorks logo + '70+ global customers' + 'Since 2007') directly below the homepage hero CTA and above the contact form submit button.",
+    "Add one attributed customer quote to the contact page — peak intent is peak anxiety; one quote from a named engineer at a recognizable company converts at the highest rate per word of copy.",
+    "Implement Organization schema on the homepage and BreadcrumbList schema on all case study and article pages — zero code required beyond JSON-LD blocks, eligible for Google rich results immediately."
+  ],
+  "medium_term": [
+    "Redesign the contact form as a two-step progressive experience: Step 1 routes by intent (Quote/Config/Support) with plain-language descriptions; Step 2 collects name, email, message with country auto-populated by IP geolocation.",
+    "Create a Pricing & Configuration FAQ page at /pricing — explain the configuration-based model, list typical decision factors, name product tiers, signal academic pricing availability. No need to publish exact prices.",
+    "Publish one 'Speedgoat vs. dSPACE' comparison article targeting the high-intent query 'dSPACE alternative Simulink' — written engineer-to-engineer, not a marketing puff piece.",
+    "Implement Product, Event, Article, and HowTo schema markup across products, events calendar, Knowledge Center articles, and how-to guides. Run all through Google's Rich Results Test after deployment.",
+    "Embed contextually matched success story pull-quotes on each solution and product page directly above the primary CTA — automotive HIL page gets AMZ Racing quote, aerospace page gets GE Aerospace or MBDA reference.",
+    "Implement hreflang tags for en-US, de-DE, de-CH, and x-default across all pages. Submit locale-specific sitemaps to Google Search Console for each market."
+  ],
+  "strategic": [
+    "Build dedicated industry landing pages for the top 5 verticals (Automotive, Aerospace & Defense, Power Electronics, Medical Devices, Energy) — each optimized for '[industry] HIL testing' queries with vertical-specific certifications, case studies, and terminology.",
+    "Launch a YouTube channel repurposing existing Knowledge Center webinars with optimized titles and descriptions. Add a production-light 'HIL in 10 Minutes' explainer series. YouTube content ranks in Google search and creates a second discovery channel at near-zero marginal cost.",
+    "Build a Speedgoat Practitioner Community (Discourse forum or Slack) to capture the academic-to-industry flywheel: students who learn Speedgoat at MIT or ETH Zurich should stay connected through a community platform and naturally specify Speedgoat when they join OEMs.",
+    "Develop a self-service configuration estimator tool — guided by industry → application type → channel count → interface types → output recommended target machine variant and I/O module starter list with a 'Request this configuration' CTA.",
+    "Launch an Academic Flywheel Program with documented pricing signals, curriculum integration resources (Simulink course templates, lab exercises), and a student case study series — modeled on how MATLAB itself achieved market dominance through engineering education standardization."
+  ],
+  "competitors": [
+    {
+      "name": "dSPACE",
+      "positioning": "Dominant HIL market leader since 1988; broadest ecosystem; defines the category",
+      "pricing": "Fully opaque; typically $20k–$50k+ for entry configurations",
+      "social_proof": "30+ year track record; very strong academic and OEM presence",
+      "content": "Deep product docs; limited marketing content; no comparison pages"
+    },
+    {
+      "name": "NI / Emerson",
+      "positioning": "Platform breadth; LabVIEW + VeriStand; Emerson acquisition brings enterprise distribution",
+      "pricing": "Partial transparency; some NI modules listed; ~$10k–$25k entry",
+      "social_proof": "Strong; NI Community is active; established Fortune 500 customer base",
+      "content": "Strong developer documentation; Python API support; active online community"
+    },
+    {
+      "name": "OPAL-RT",
+      "positioning": "High-fidelity power grid and FPGA-based simulation specialist; strong in energy sector",
+      "pricing": "Fully opaque; typically $20k–$60k for entry configurations",
+      "social_proof": "Moderate; strong in power systems niche; less automotive visibility",
+      "content": "Technical depth; limited marketing content; no comparison or alternatives pages"
+    }
+  ]
+}
