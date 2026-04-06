@@ -1,3 +1,5 @@
+"use client";
+
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -15,6 +17,38 @@ const contactInfo = [
 ];
 
 export default function ContactPage() {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const data = {
+      firstName: (document.getElementById("firstName") as HTMLInputElement).value,
+      lastName: (document.getElementById("lastName") as HTMLInputElement).value,
+      email: (document.getElementById("email") as HTMLInputElement).value,
+      phone: (document.getElementById("phone") as HTMLInputElement).value,
+      serviceNeeded: (document.getElementById("service") as HTMLSelectElement).value,
+      projectDetails: (document.getElementById("message") as HTMLTextAreaElement).value,
+    };
+
+    try {
+      const res = await fetch(https://script.google.com/macros/s/AKfycbz0yQMvHH4T_tw7zEhxKUXSx8Mt2BFbs0jxn5vaQDhAbua6CeH_cXcBpGQDAXZ1Glxo/exec, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await res.text();
+      console.log(result);
+      alert("Form submitted successfully!");
+
+      (e.target as HTMLFormElement).reset();
+    } catch (err) {
+      console.error(err);
+      alert("Error submitting form");
+    }
+  };
+  
   return (
     <div className="bg-white">
       {/* Hero */}
