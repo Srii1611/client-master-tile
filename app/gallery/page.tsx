@@ -8,27 +8,26 @@ export const metadata: Metadata = {
   alternates: { canonical: "/gallery" },
 };
 
-const categories = ["All", "Bathroom", "Kitchen", "Floor", "Outdoor", "Commercial"];
+const categories = ["All", "Bathroom", "Kitchen", "Floor"];
 
-// Placeholder project data — replace image src with real photos
 const projects = [
-  { id: 1, title: "Master Bathroom Remodel", category: "Bathroom", location: "Framingham, MA", desc: "Floor-to-ceiling marble-look porcelain with custom niche and linear drain." },
-  { id: 2, title: "Kitchen Subway Backsplash", category: "Kitchen", location: "Natick, MA", desc: "Classic white subway tile with dark grout in a herringbone pattern." },
-  { id: 3, title: "Open-Plan Living Room Floor", category: "Floor", location: "Ashland, MA", desc: "24×24 large-format porcelain tile with minimal grout lines." },
-  { id: 4, title: "Pool Deck & Patio", category: "Outdoor", location: "Holliston, MA", desc: "Slip-resistant travertine-look tile around an in-ground pool." },
-  { id: 5, title: "Restaurant Dining Room", category: "Commercial", location: "Framingham, MA", desc: "Geometric patterned cement-look tile for a high-traffic restaurant floor." },
-  { id: 6, title: "Guest Bathroom Renovation", category: "Bathroom", location: "Southborough, MA", desc: "Hex mosaic floor with subway wall tile and custom border detail." },
-  { id: 7, title: "Kitchen Island Feature", category: "Kitchen", location: "Framingham, MA", desc: "Handmade Zellige-style backsplash with antique brass accents." },
-  { id: 8, title: "Mudroom Entryway", category: "Floor", location: "Hopkinton, MA", desc: "Durable slate-look porcelain with radiant heat preparation." },
-  { id: 9, title: "Office Building Lobby", category: "Commercial", location: "Framingham, MA", desc: "Polished large-format tile with custom logo medallion inlay." },
+  { id: 1, title: "Marble Double Shower", category: "Bathroom", location: "MetroWest, MA", desc: "Dual-head walk-in shower with chevron mosaic accent strips, built-in bench, and recessed niches.", image: "/images/gallery/marble-double-shower.jpg" },
+  { id: 2, title: "Luxury Marble Bathroom", category: "Bathroom", location: "MetroWest, MA", desc: "Premium marble shower with frameless glass, oval accent window, and multi-head shower system.", image: "/images/gallery/luxury-marble-shower.jpg" },
+  { id: 3, title: "Blue Marble Walk-In Shower", category: "Bathroom", location: "MetroWest, MA", desc: "Floor-to-ceiling blue marble-look porcelain with built-in shelving, corner shelf, and mosaic shower floor.", image: "/images/gallery/blue-marble-shower.jpg" },
+  { id: 4, title: "Industrial Glass Enclosure", category: "Bathroom", location: "MetroWest, MA", desc: "Modern bathroom with black steel-frame glass shower door, subway tile walls, and marble countertop.", image: "/images/gallery/black-frame-bathroom.jpg" },
+  { id: 5, title: "Marble Shower & Vanity", category: "Bathroom", location: "MetroWest, MA", desc: "Frameless glass marble shower with mosaic floor, niche shelving, and matching marble vanity top.", image: "/images/gallery/marble-glass-shower.jpg" },
+  { id: 6, title: "Calacatta Marble Flooring", category: "Floor", location: "MetroWest, MA", desc: "Elegant hexagonal Calacatta marble floor tile with black accent inlays and clawfoot tub.", image: "/images/gallery/calacatta-floor-tub.jpg" },
+  { id: 7, title: "Subway Tile with Marble Band", category: "Bathroom", location: "MetroWest, MA", desc: "Clean white subway tile shower with decorative marble accent band and recessed niche.", image: "/images/gallery/subway-accent-shower.jpg" },
+  { id: 8, title: "Hex Mosaic Floor Shower", category: "Bathroom", location: "MetroWest, MA", desc: "Subway tile walls with corner shelves and hexagonal mosaic floor extending from shower to bathroom.", image: "/images/gallery/subway-hex-shower.jpg" },
+  { id: 9, title: "Marble Backsplash Install", category: "Kitchen", location: "MetroWest, MA", desc: "Calacatta marble backsplash with precision leveling system and dual-sink vanity with brass fixtures.", image: "/images/gallery/marble-backsplash-progress.jpg" },
+  { id: 10, title: "Mosaic Shower Floor", category: "Bathroom", location: "MetroWest, MA", desc: "Travertine wall tile with multi-tone mosaic shower floor and fold-down teak bench.", image: "/images/gallery/mosaic-shower-floor.jpg" },
+  { id: 11, title: "Tub Surround with Matte Black", category: "Bathroom", location: "MetroWest, MA", desc: "Large-format porcelain tub surround with matte black fixtures and corner shelf detail.", image: "/images/gallery/tub-surround-black.jpg" },
 ];
 
 const categoryColors: Record<string, string> = {
   Bathroom: "bg-blue-100 text-blue-800",
   Kitchen: "bg-green-100 text-green-800",
   Floor: "bg-blue-100 text-blue-800",
-  Outdoor: "bg-emerald-100 text-emerald-800",
-  Commercial: "bg-purple-100 text-purple-800",
 };
 
 export default function GalleryPage() {
@@ -39,7 +38,7 @@ export default function GalleryPage() {
         <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl font-extrabold mb-3">Project Gallery</h1>
           <p className="text-stone-300 text-lg">
-            A sample of our craftsmanship across Framingham, MA and the MetroWest region.
+            Real projects completed by Master Tile Installation across Framingham, MA and the MetroWest region.
           </p>
         </div>
       </section>
@@ -65,11 +64,15 @@ export default function GalleryPage() {
       {/* Grid */}
       <section className="py-12 px-4">
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map(({ id, title, category, location, desc }) => (
+          {projects.map(({ id, title, category, location, desc, image }) => (
             <div key={id} className="border border-stone-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow group">
-              {/* Placeholder image area */}
-              <div className="bg-stone-100 h-52 flex items-center justify-center text-stone-400 text-sm group-hover:bg-stone-200 transition-colors">
-                <span>[ Photo — {title} ]</span>
+              <div className="relative h-52 overflow-hidden">
+                <img
+                  src={image}
+                  alt={title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
               </div>
               <div className="p-4">
                 <div className="flex items-start justify-between gap-2 mb-1">
@@ -92,7 +95,7 @@ export default function GalleryPage() {
         <p className="text-stone-500 mb-6">Contact us to discuss your project and get a free estimate.</p>
         <Link
           href="/contact"
-          className="inline-block bg-blue-700 hover:bg-blue-600 text-slate-800 font-bold px-8 py-3 rounded-md transition-colors"
+          className="inline-block bg-blue-700 hover:bg-blue-600 text-white font-bold px-8 py-3 rounded-md transition-colors"
         >
           Start Your Project
         </Link>

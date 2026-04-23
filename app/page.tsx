@@ -22,14 +22,24 @@ const services = [
     image: "/images/bathroom1.jpg",
   },
   {
-    title: "Kitchen Remodeling",
-    desc: "Stylish backsplash designs and kitchen floor tile that complement your space.",
+    title: "Kitchen Backsplash",
+    desc: "Stylish backsplash designs in herringbone, subway, and mosaic patterns.",
     image: "/images/kitchen1.jpg",
   },
   {
     title: "Tile Flooring",
     desc: "Porcelain, ceramic, and natural stone floors installed with precision.",
     image: "/images/flooring1.jpg",
+  },
+  {
+    title: "Outdoor & Patio",
+    desc: "Slip-resistant, frost-proof tile for patios, pool decks, and walkways.",
+    image: "/images/outdoor1.jpg",
+  },
+  {
+    title: "Commercial Spaces",
+    desc: "High-durability tile for offices, lobbies, restaurants, and retail spaces.",
+    image: "/images/commercial1.jpg",
   },
 ];
 
