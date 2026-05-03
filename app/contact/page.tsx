@@ -16,33 +16,32 @@ const contactInfo = [
 
 export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    const data = {
-      firstName: (document.getElementById("firstName") as HTMLInputElement).value,
-      lastName: (document.getElementById("lastName") as HTMLInputElement).value,
-      email: (document.getElementById("email") as HTMLInputElement).value,
-      phone: (document.getElementById("phone") as HTMLInputElement).value,
-      serviceNeeded: (document.getElementById("service") as HTMLSelectElement).value,
-      projectDetails: (document.getElementById("message") as HTMLTextAreaElement).value,
-    };
+  const formData = new FormData();
 
-    try {
-      const res = await fetch("https://script.google.com/macros/s/AKfycbz0yQMvHH4T_tw7zEhxKUXSx8Mt2BFbs0jxn5vaQDhAbua6CeH_cXcBpGQDAXZ1Glxo/exec", {
+  formData.append("firstName", (document.getElementById("firstName") as HTMLInputElement).value);
+  formData.append("lastName", (document.getElementById("lastName") as HTMLInputElement).value);
+  formData.append("email", (document.getElementById("email") as HTMLInputElement).value);
+  formData.append("phone", (document.getElementById("phone") as HTMLInputElement).value);
+  formData.append("serviceNeeded", (document.getElementById("service") as HTMLSelectElement).value);
+  formData.append("projectDetails", (document.getElementById("message") as HTMLTextAreaElement).value);
+
+  try {
+    await fetch(
+      "https://script.google.com/macros/s/AKfycbxhPb9KeemZdfua_TOQguem_-gX-Ws3u60DjGOhQ_RrIo6zW6fWmbU1a_xTmedsLWiv/exec",
+      {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+        body: formData,
+      }
+    );
 
-      alert("Form submitted successfully!");
-      console.log(await res.text());
-    } catch (err) {
-      console.error(err);
-      alert("Error submitting form");
-    }
-  };
+    alert("Form submitted successfully!");
+  } catch (err) {
+    console.error(err);
+    alert("Error submitting form");
+  }
+};
 
   return (
     <div className="bg-white">
