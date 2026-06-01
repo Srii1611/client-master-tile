@@ -2,10 +2,31 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Professional Tile Installation in Framingham, MA",
+  title: "Tile Contractor in Framingham MA | Expert Installation Since 2005",
   description:
-    "Master Tile Installation, Inc. offers expert floor, wall, and bathroom tile installation for homes and businesses in Framingham, MA and the MetroWest area.",
-  alternates: { canonical: "/" },
+    "Master Tile Installation, Inc. offers expert floor, wall, and bathroom tile installation for homes and businesses in Framingham, MA and the MetroWest area. Free estimates.",
+  alternates: { canonical: "https://www.mastertileinstallation.com" },
+  openGraph: {
+    title: "Master Tile Installation, Inc. | Framingham, MA",
+    description:
+      "Expert floor, wall, and bathroom tile installation for homes and businesses in Framingham, MA. Free in-home estimates. Call (508) 740-7253.",
+    url: "https://www.mastertileinstallation.com",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Master Tile Installation — Professional Tile Contractor in Framingham, MA",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Master Tile Installation, Inc. | Framingham, MA",
+    description:
+      "Expert tile installation in Framingham, MA. Free estimates. Call (508) 740-7253.",
+    images: ["/images/og-image.jpg"],
+  },
 };
 
 const stats = [
@@ -20,26 +41,31 @@ const services = [
     title: "Bathroom Renovations",
     desc: "Full bathroom tile renovations — floors, walls, custom showers, and wet areas.",
     image: "/images/bathroom1.jpg",
+    alt: "Bathroom tile installation Framingham MA — shower and floor tile",
   },
   {
     title: "Kitchen Backsplash",
     desc: "Stylish backsplash designs in herringbone, subway, and mosaic patterns.",
     image: "/images/kitchen1.jpg",
+    alt: "Kitchen backsplash tile installation Framingham MA",
   },
   {
     title: "Tile Flooring",
     desc: "Porcelain, ceramic, and natural stone floors installed with precision.",
     image: "/images/flooring1.jpg",
+    alt: "Porcelain and ceramic floor tile installation MetroWest MA",
   },
   {
     title: "Outdoor & Patio",
     desc: "Slip-resistant, frost-proof tile for patios, pool decks, and walkways.",
     image: "/images/outdoor1.jpg",
+    alt: "Outdoor patio tile installation Framingham MA — frost-proof slip-resistant",
   },
   {
     title: "Commercial Spaces",
     desc: "High-durability tile for offices, lobbies, restaurants, and retail spaces.",
     image: "/images/commercial1.jpg",
+    alt: "Commercial tile installation Framingham MA — offices restaurants retail",
   },
 ];
 
@@ -73,6 +99,7 @@ const whyChoose = [
 export default function HomePage() {
   return (
     <>
+      {/* Hero */}
       <section className="relative text-white py-24 px-4 text-center overflow-hidden bg-slate-900">
         <video
           className="absolute inset-0 w-full h-full object-cover"
@@ -110,6 +137,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Stats */}
       <section className="bg-navy text-white">
         <div className="max-w-6xl mx-auto px-4 py-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
           {stats.map(({ value, label }) => (
@@ -121,6 +149,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Services */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-slate-800 text-center mb-2">Our Services</h2>
@@ -128,12 +157,13 @@ export default function HomePage() {
             From single-room updates to full commercial installs, we do it all.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {services.map(({ title, desc, image }) => (
-              <div
-                key={title}
-                className="relative rounded-lg overflow-hidden h-72 group"
-                style={{ backgroundImage: `url(${image})`, backgroundSize: "cover", backgroundPosition: "center" }}
-              >
+            {services.map(({ title, desc, image, alt }) => (
+              <div key={title} className="relative rounded-lg overflow-hidden h-72 group">
+                <img
+                  src={image}
+                  alt={alt}
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
                 <div className="absolute inset-0 bg-slate-900/55 group-hover:bg-slate-900/70 transition-colors" />
                 <div className="absolute inset-0 flex flex-col justify-end p-5 text-white">
                   <h3 className="text-lg font-bold mb-1">{title}</h3>
@@ -153,6 +183,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Why choose us */}
       <section className="py-16 px-4 bg-gray-100">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-slate-800 mb-4">Why Choose Master Tile?</h2>
@@ -178,6 +209,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Reviews */}
       <section className="py-16 px-4 bg-slate-900 text-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-2">What Our Customers Say</h2>
@@ -198,6 +230,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* CTA */}
       <section className="bg-blue-700 text-white py-14 px-4 text-center">
         <h2 className="text-2xl md:text-3xl font-bold mb-3">Ready to Start Your Project?</h2>
         <p className="text-blue-100 mb-6">Contact us today for a free, no-obligation estimate.</p>
