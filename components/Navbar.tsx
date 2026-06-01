@@ -20,12 +20,10 @@ export default function Navbar() {
     <header className="bg-slate-900 text-white shadow-md sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 py-2 flex items-center justify-between">
         <Link href="/">
-          {/* Remove the style filter below if your logo is already white or light-colored */}
           <img
             src="/images/logo.png"
             alt="Master Tile Installation, Inc."
-            className="h-14 w-auto"
-            style={{ filter: "brightness(0) invert(1)" }}
+            className="h-16 w-auto"
           />
         </Link>
 

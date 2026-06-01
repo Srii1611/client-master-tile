@@ -32,7 +32,7 @@ export default function GalleryGrid() {
 
   return (
     <>
-      <section className="border-b border-stone-200 sticky top-[72px] bg-white z-40">
+      <section className="border-b border-stone-200 sticky top-[80px] bg-white z-40">
         <div className="max-w-6xl mx-auto px-4 py-3 flex gap-2 overflow-x-auto">
           {categories.map((cat) => (
             <button

@@ -14,7 +14,6 @@ const services = [
 
 const initialForm = {
   firstName: "",
-  lastName: "",
   email: "",
   phone: "",
   serviceNeeded: "",
@@ -58,37 +57,20 @@ export default function ContactForm() {
 
   return (
     <form className="space-y-5" onSubmit={handleSubmit}>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-        <div>
-          <label htmlFor="firstName" className="block text-sm font-medium text-stone-700 mb-1">
-            First Name <span className="text-red-500">*</span>
-          </label>
-          <input
-            id="firstName"
-            name="firstName"
-            type="text"
-            required
-            value={form.firstName}
-            onChange={update("firstName")}
-            className="w-full border border-stone-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            placeholder="Jane"
-          />
-        </div>
-        <div>
-          <label htmlFor="lastName" className="block text-sm font-medium text-stone-700 mb-1">
-            Last Name <span className="text-red-500">*</span>
-          </label>
-          <input
-            id="lastName"
-            name="lastName"
-            type="text"
-            required
-            value={form.lastName}
-            onChange={update("lastName")}
-            className="w-full border border-stone-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            placeholder="Smith"
-          />
-        </div>
+      <div>
+        <label htmlFor="firstName" className="block text-sm font-medium text-stone-700 mb-1">
+          First Name <span className="text-red-500">*</span>
+        </label>
+        <input
+          id="firstName"
+          name="firstName"
+          type="text"
+          required
+          value={form.firstName}
+          onChange={update("firstName")}
+          className="w-full border border-stone-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          placeholder="Jane"
+        />
       </div>
 
       <div>

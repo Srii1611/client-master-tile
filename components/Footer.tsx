@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Instagram } from "lucide-react";
+import { Instagram, Facebook } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -22,6 +22,15 @@ export default function Footer() {
               aria-label="Instagram"
             >
               <Instagram size={24} />
+            </a>
+            <a
+              href="https://www.facebook.com/mastertileinstallation"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-blue-300 transition-colors"
+              aria-label="Facebook"
+            >
+              <Facebook size={24} />
             </a>
           </div>
         </div>
