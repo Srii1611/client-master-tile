@@ -1,12 +1,11 @@
 import Link from "next/link";
-import { Instagram, Facebook } from "lucide-react";
+import { Instagram } from "lucide-react";
 
 export default function Footer() {
   return (
     <footer className="bg-slate-900 text-white">
       <div className="max-w-6xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
 
-        {/* Brand */}
         <div>
           <h3 className="text-blue-400 font-bold text-lg mb-2">
             Master Tile Installation, Inc.
@@ -24,19 +23,9 @@ export default function Footer() {
             >
               <Instagram size={24} />
             </a>
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-blue-300 transition-colors"
-              aria-label="Facebook"
-            >
-              <Facebook size={24} />
-            </a>
           </div>
         </div>
 
-        {/* Quick Links */}
         <div>
           <h4 className="text-white font-semibold mb-3">Quick Links</h4>
           <ul className="space-y-1 text-sm">
@@ -56,7 +45,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Contact */}
         <div>
           <h4 className="text-white font-semibold mb-3">Contact Us</h4>
           <address className="not-italic text-sm space-y-1 text-slate-400">
@@ -69,8 +57,8 @@ export default function Footer() {
             </p>
             <p>
               Email:{" "}
-              <a href="mailto:info@mastertilemainst.com" className="hover:text-blue-400 transition-colors">
-                info@mastertilemainst.com
+              <a href="mailto:martirtile@gmail.com" className="hover:text-blue-400 transition-colors">
+                martirtile@gmail.com
               </a>
             </p>
             <p className="pt-1">Mon–Fri: 7am – 6pm</p>
@@ -80,7 +68,6 @@ export default function Footer() {
 
       </div>
 
-      {/* Bottom Bar */}
       <div className="border-t border-slate-700 text-center text-xs text-slate-400 py-4 px-4">
         © {new Date().getFullYear()} Master Tile Installation, Inc. All rights reserved.
       </div>

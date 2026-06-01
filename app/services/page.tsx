@@ -69,7 +69,6 @@ const services = [
 export default function ServicesPage() {
   return (
     <div className="bg-white">
-      {/* Page hero */}
       <section className="bg-slate-800 text-white py-16 px-4 text-center">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl font-extrabold mb-3">Our Services</h1>
@@ -79,7 +78,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Services list */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto space-y-14">
           {services.map(({ category, items }) => (
@@ -107,7 +105,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="bg-stone-50 py-14 px-4 text-center border-t border-stone-200">
         <h2 className="text-2xl font-bold text-stone-800 mb-3">Not sure what you need?</h2>
         <p className="text-stone-500 mb-6 max-w-xl mx-auto">
@@ -115,7 +112,7 @@ export default function ServicesPage() {
         </p>
         <Link
           href="/contact"
-          className="inline-block bg-blue-700 hover:bg-blue-600 text-slate-800 font-bold px-8 py-3 rounded-md transition-colors"
+          className="inline-block bg-blue-700 hover:bg-blue-600 text-white font-bold px-8 py-3 rounded-md transition-colors"
         >
           Request a Free Quote
         </Link>

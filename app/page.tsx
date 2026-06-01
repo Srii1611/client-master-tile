@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 const stats = [
-  { value: "10+", label: "Years in Business" },
+  { value: "20+", label: "Years in Business" },
   { value: "500+", label: "Projects Completed" },
   { value: "5★", label: "Average Rating" },
   { value: "100%", label: "Licensed & Insured" },
@@ -61,10 +61,18 @@ const reviews = [
   },
 ];
 
+const whyChoose = [
+  "Licensed, bonded & fully insured",
+  "Free in-home estimates",
+  "Premium materials at competitive prices",
+  "On-time, on-budget completion",
+  "Residential & commercial expertise",
+  "5-star rated on Google & Houzz",
+];
+
 export default function HomePage() {
   return (
     <>
-      {/* Hero with background video */}
       <section className="relative text-white py-24 px-4 text-center overflow-hidden bg-slate-900">
         <video
           className="absolute inset-0 w-full h-full object-cover"
@@ -74,9 +82,7 @@ export default function HomePage() {
           loop
           playsInline
         />
-        {/* Dark overlay */}
         <div className="absolute inset-0 bg-slate-900/65" />
-
         <div className="relative z-10 max-w-3xl mx-auto">
           <p className="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-3">
             Framingham, MA &amp; MetroWest
@@ -104,8 +110,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Stats bar */}
-      <section className="bg-[#1e3a5f] text-white">
+      <section className="bg-navy text-white">
         <div className="max-w-6xl mx-auto px-4 py-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
           {stats.map(({ value, label }) => (
             <div key={label}>
@@ -116,7 +121,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Services overview with photo cards */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-slate-800 text-center mb-2">Our Services</h2>
@@ -141,7 +145,7 @@ export default function HomePage() {
           <div className="text-center mt-8">
             <Link
               href="/services"
-              className="text-blue-700 hover:text-blue-700 font-semibold underline underline-offset-2"
+              className="text-blue-700 hover:text-blue-800 font-semibold underline underline-offset-2"
             >
               See all services →
             </Link>
@@ -149,7 +153,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why choose us */}
       <section className="py-16 px-4 bg-gray-100">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-slate-800 mb-4">Why Choose Master Tile?</h2>
@@ -157,17 +160,10 @@ export default function HomePage() {
             We&apos;re a family-owned business serving Framingham and surrounding communities with integrity and skill.
           </p>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left text-slate-700">
-            {[
-              "Licensed, bonded &amp; fully insured",
-              "Free in-home estimates",
-              "Premium materials at competitive prices",
-              "On-time, on-budget completion",
-              "Residential &amp; commercial expertise",
-              "5-star rated on Google &amp; Houzz",
-            ].map((item) => (
+            {whyChoose.map((item) => (
               <li key={item} className="flex items-start gap-2">
                 <span className="text-blue-700 mt-0.5">✓</span>
-                <span dangerouslySetInnerHTML={{ __html: item }} />
+                <span>{item}</span>
               </li>
             ))}
           </ul>
@@ -182,7 +178,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Reviews */}
       <section className="py-16 px-4 bg-slate-900 text-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-2">What Our Customers Say</h2>
@@ -203,12 +198,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA banner */}
       <section className="bg-blue-700 text-white py-14 px-4 text-center">
         <h2 className="text-2xl md:text-3xl font-bold mb-3">Ready to Start Your Project?</h2>
-        <p className="text-blue-100 mb-6">
-          Contact us today for a free, no-obligation estimate.
-        </p>
+        <p className="text-blue-100 mb-6">Contact us today for a free, no-obligation estimate.</p>
         <Link
           href="/contact"
           className="bg-white hover:bg-slate-100 text-blue-700 font-bold px-8 py-3 rounded-md transition-colors"

@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about Master Tile Installation, Inc. — a family-owned tile contractor based in Framingham, MA with over 18 years of experience serving MetroWest homeowners and businesses.",
+    "Learn about Master Tile Installation, Inc. — a family-owned tile contractor based in Framingham, MA with over 20 years of experience serving MetroWest homeowners and businesses.",
   alternates: { canonical: "/about" },
 };
 
@@ -29,26 +29,28 @@ const values = [
 
 const team = [
   {
-    name: "Marco Silva",
+    name: "Lucas M.",
     role: "Owner & Lead Installer",
-    bio: "With 20+ years in the trade, Marco founded Master Tile in 2005 after working for regional contractors in the Boston area. He personally oversees every project.",
+    bio: "With 20+ years in the trade, Lucas founded Master Tile in 2005 after working for regional contractors in the Boston area. He personally oversees every project.",
+    image: "/images/team/lucas.jpg",
   },
   {
     name: "Ana Silva",
     role: "Operations & Client Relations",
     bio: "Ana manages scheduling, client communication, and the day-to-day operations that keep projects running smoothly.",
+    image: "/images/team/ana-silva.jpg",
   },
   {
     name: "Luis Pereira",
     role: "Senior Tile Installer",
     bio: "Luis specializes in large-format tile and intricate mosaic work, bringing 12 years of installation expertise to the team.",
+    image: "/images/team/luis-pereira.jpg",
   },
 ];
 
 export default function AboutPage() {
   return (
     <div className="bg-white">
-      {/* Hero */}
       <section className="bg-slate-800 text-white py-16 px-4 text-center">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl font-extrabold mb-3">About Master Tile</h1>
@@ -58,16 +60,19 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Story */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div className="bg-stone-100 rounded-lg h-72 flex items-center justify-center text-stone-400 text-sm">
-            [ Company photo ]
+          <div className="rounded-lg h-72 overflow-hidden bg-stone-100">
+            <img
+              src="/images/about/company.jpg"
+              alt="Master Tile Installation team at work"
+              className="w-full h-full object-cover"
+            />
           </div>
           <div>
             <h2 className="text-2xl font-bold text-stone-800 mb-4">Our Story</h2>
             <p className="text-stone-500 leading-relaxed mb-4">
-              Master Tile Installation, Inc. was founded in 2005 by Marco Silva after years of working alongside
+              Master Tile Installation, Inc. was founded in 2005 by Lucas after years of working alongside
               experienced tile setters throughout the Boston metro area. What started as a one-man operation has
               grown into a trusted team of skilled installers serving Framingham and the wider MetroWest community.
             </p>
@@ -80,7 +85,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Values */}
       <section className="py-16 px-4 bg-stone-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl font-bold text-stone-800 text-center mb-10">What We Stand For</h2>
@@ -95,15 +99,14 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl font-bold text-stone-800 text-center mb-10">Meet the Team</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {team.map(({ name, role, bio }) => (
+            {team.map(({ name, role, bio, image }) => (
               <div key={name} className="border border-stone-200 rounded-lg p-6 text-center hover:shadow-md transition-shadow">
-                <div className="w-20 h-20 bg-stone-200 rounded-full mx-auto mb-4 flex items-center justify-center text-stone-400 text-xs">
-                  Photo
+                <div className="w-20 h-20 rounded-full mx-auto mb-4 overflow-hidden bg-stone-200">
+                  <img src={image} alt={name} className="w-full h-full object-cover" />
                 </div>
                 <h3 className="font-bold text-stone-800 text-lg">{name}</h3>
                 <p className="text-blue-700 text-sm font-medium mb-3">{role}</p>
@@ -114,7 +117,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Credentials */}
       <section className="py-12 px-4 bg-blue-50 border-t border-blue-100">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-xl font-bold text-stone-800 mb-6">Credentials &amp; Affiliations</h2>
@@ -134,13 +136,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="bg-slate-800 text-white py-14 px-4 text-center">
         <h2 className="text-2xl font-bold mb-3">Ready to work with us?</h2>
         <p className="text-stone-400 mb-6">Get in touch for a free consultation and estimate.</p>
         <Link
           href="/contact"
-          className="inline-block bg-blue-700 hover:bg-blue-600 text-slate-800 font-bold px-8 py-3 rounded-md transition-colors"
+          className="inline-block bg-blue-700 hover:bg-blue-600 text-white font-bold px-8 py-3 rounded-md transition-colors"
         >
           Contact Us
         </Link>

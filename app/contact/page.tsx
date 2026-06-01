@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact Us — Free Tile Installation Estimate",
@@ -8,45 +9,15 @@ export const metadata: Metadata = {
 };
 
 const contactInfo = [
-  { label: "Phone", value: "(508) 555-0100", href: "tel:+15085550100" },
-  { label: "Email", value: "info@mastertilemass.com", href: "mailto:info@mastertilemass.com" },
-  { label: "Address", value: "Framingham, MA 01701", href: null },
+  { label: "Phone", value: "(508) 740-7253", href: "tel:+15087407253" },
+  { label: "Email", value: "martirtile@gmail.com", href: "mailto:martirtile@gmail.com" },
+  { label: "Address", value: "31 Cypress St, Framingham, MA 01702", href: null },
   { label: "Hours", value: "Mon–Fri 7am–6pm · Sat 8am–4pm", href: null },
 ];
 
 export default function ContactPage() {
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    const data = {
-      firstName: (document.getElementById("firstName") as HTMLInputElement).value,
-      lastName: (document.getElementById("lastName") as HTMLInputElement).value,
-      email: (document.getElementById("email") as HTMLInputElement).value,
-      phone: (document.getElementById("phone") as HTMLInputElement).value,
-      serviceNeeded: (document.getElementById("service") as HTMLSelectElement).value,
-      projectDetails: (document.getElementById("message") as HTMLTextAreaElement).value,
-    };
-
-    try {
-      const res = await fetch("https://script.google.com/macros/s/AKfycbz0yQMvHH4T_tw7zEhxKUXSx8Mt2BFbs0jxn5vaQDhAbua6CeH_cXcBpGQDAXZ1Glxo/exec", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-
-      alert("Form submitted successfully!");
-      console.log(await res.text());
-    } catch (err) {
-      console.error(err);
-      alert("Error submitting form");
-    }
-  };
-
   return (
     <div className="bg-white">
-      {/* Hero */}
       <section className="bg-slate-800 text-white py-16 px-4 text-center">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl font-extrabold mb-3">Get in Touch</h1>
@@ -58,113 +29,11 @@ export default function ContactPage() {
 
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact form */}
           <div>
             <h2 className="text-2xl font-bold text-stone-800 mb-6">Request a Free Quote</h2>
-            <form className="space-y-5" onSubmit={handleSubmit} noValidate>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <div>
-                  <label htmlFor="firstName" className="block text-sm font-medium text-stone-700 mb-1">
-                    First Name <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    id="firstName"
-                    name="firstName"
-                    type="text"
-                    required
-                    className="w-full border border-stone-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="Jane"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="lastName" className="block text-sm font-medium text-stone-700 mb-1">
-                    Last Name <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    id="lastName"
-                    name="lastName"
-                    type="text"
-                    required
-                    className="w-full border border-stone-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="Smith"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-stone-700 mb-1">
-                  Email Address <span className="text-red-500">*</span>
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  className="w-full border border-stone-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="jane@example.com"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-stone-700 mb-1">
-                  Phone Number
-                </label>
-                <input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  className="w-full border border-stone-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="(508) 555-1234"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="service" className="block text-sm font-medium text-stone-700 mb-1">
-                  Service Needed
-                </label>
-                <select
-                  id="service"
-                  name="service"
-                  className="w-full border border-stone-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white"
-                >
-                  <option value="">Select a service…</option>
-                  <option>Floor Tile Installation</option>
-                  <option>Bathroom & Shower Tile</option>
-                  <option>Kitchen Backsplash</option>
-                  <option>Fireplace Surround</option>
-                  <option>Outdoor / Patio Tile</option>
-                  <option>Commercial Tile</option>
-                  <option>Other</option>
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-stone-700 mb-1">
-                  Project Details <span className="text-red-500">*</span>
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  required
-                  className="w-full border border-stone-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
-                  placeholder="Describe your project — room size, tile style preferences, timeline, etc."
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-blue-700 hover:bg-blue-600 text-slate-800 font-bold py-3 rounded-md transition-colors text-sm"
-              >
-                Send My Request
-              </button>
-              <p className="text-xs text-stone-400 text-center">
-                We typically respond within one business day.
-              </p>
-            </form>
+            <ContactForm />
           </div>
 
-          {/* Contact info + map placeholder */}
           <div className="space-y-8">
             <div>
               <h2 className="text-2xl font-bold text-stone-800 mb-6">Contact Information</h2>
@@ -184,7 +53,6 @@ export default function ContactPage() {
               </ul>
             </div>
 
-            {/* Service area */}
             <div className="border border-stone-200 rounded-lg p-5">
               <h3 className="font-semibold text-stone-800 mb-3">Service Area</h3>
               <p className="text-stone-500 text-sm mb-2">
@@ -203,9 +71,14 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Map placeholder */}
-            <div className="bg-stone-100 rounded-lg h-52 flex items-center justify-center text-stone-400 text-sm border border-stone-200">
-              [ Google Maps embed — Framingham, MA ]
+            <div className="rounded-lg overflow-hidden border border-stone-200 h-52">
+              <iframe
+                title="Master Tile Installation location — Framingham, MA"
+                src="https://maps.google.com/maps?q=31%20Cypress%20St%2C%20Framingham%2C%20MA%2001702&output=embed"
+                className="w-full h-full"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </div>
         </div>

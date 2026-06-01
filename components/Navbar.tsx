@@ -20,14 +20,15 @@ export default function Navbar() {
     <header className="bg-slate-900 text-white shadow-md sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 py-2 flex items-center justify-between">
         <Link href="/">
+          {/* Remove the style filter below if your logo is already white or light-colored */}
           <img
-  src="/images/logo.png"
-  alt="Master Tile Installation, Inc."
-  style={{ height: '180px', width: 'auto', filter: 'brightness(0) invert(1)' }}
-/>
+            src="/images/logo.png"
+            alt="Master Tile Installation, Inc."
+            className="h-14 w-auto"
+            style={{ filter: "brightness(0) invert(1)" }}
+          />
         </Link>
 
-        {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-6">
           {navLinks.map(({ href, label }) => (
             <Link
@@ -42,13 +43,12 @@ export default function Navbar() {
           ))}
           <Link
             href="/contact"
-            className="ml-2 bg-[#1e3a5f] hover:bg-[#152d4a] text-white font-semibold px-5 py-2 rounded-md transition-colors"
+            className="ml-2 bg-navy hover:bg-navy-dark text-white font-semibold px-5 py-2 rounded-md transition-colors"
           >
             Get a Free Quote
           </Link>
         </nav>
 
-        {/* Mobile hamburger */}
         <button
           className="md:hidden text-white focus:outline-none"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -64,7 +64,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
       {menuOpen && (
         <nav className="md:hidden bg-slate-800 px-4 pb-4 flex flex-col gap-3">
           {navLinks.map(({ href, label }) => (
@@ -82,7 +81,7 @@ export default function Navbar() {
           <Link
             href="/contact"
             onClick={() => setMenuOpen(false)}
-            className="mt-1 bg-[#1e3a5f] hover:bg-[#152d4a] text-white font-semibold px-5 py-2 rounded-md text-center transition-colors"
+            className="mt-1 bg-navy hover:bg-navy-dark text-white font-semibold px-5 py-2 rounded-md text-center transition-colors"
           >
             Get a Free Quote
           </Link>
