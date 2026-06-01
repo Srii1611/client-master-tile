@@ -23,7 +23,7 @@ export default function Navbar() {
           <img
             src="/images/logo.png"
             alt="Master Tile Installation, Inc."
-            className="h-16 w-auto"
+            className="h-16 w-auto brightness-0 invert"
           />
         </Link>
 
